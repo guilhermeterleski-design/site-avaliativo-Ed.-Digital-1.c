@@ -1,0 +1,113 @@
+/* --- DESIGN SYSTEM (:ROOT) --- */
+:root {
+    /* Cores principais - Altere aqui */
+    --primary: #2d5a27;
+    --accent: #d4a373;
+    --bg-body: #fefae0;
+    --text-dark: #1a1a1a;
+    --surface: #ffffff;
+    
+    /* Espaçamentos e Bordas */
+    --radius: 16px;
+    --gap: 2rem;
+    --transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    
+    font-size: 16px;
+}
+
+/* --- MODO ALTO CONTRASTE --- */
+body.high-contrast {
+    --primary: #ffff00;
+    --accent: #ffffff;
+    --bg-body: #000000;
+    --text-dark: #ffffff;
+    --surface: #000000;
+    border: 2px solid #ffff00;
+}
+
+/* --- RESET & ACCESSIBILITY --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+.skip-link {
+    position: absolute;
+    top: -100px; left: 0;
+    background: var(--primary); color: white;
+    padding: 1rem; z-index: 999;
+}
+.skip-link:focus { top: 0; }
+
+body {
+    background-color: var(--bg-body);
+    color: var(--text-dark);
+    font-family: system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container { width: 90%; max-width: 1200px; margin: auto; }
+
+/* --- HEADER --- */
+.main-header {
+    background: var(--surface);
+    padding: 1rem 0;
+    position: sticky; top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+.navbar { display: flex; justify-content: space-between; align-items: center; }
+
+/* --- GRID DE PROBLEMAS (LAYOUT DINÂMICO) --- */
+.grid-layout {
+    display: grid;
+    /* Altere '320px' para ajustar a largura mínima dos cards */
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: var(--gap);
+    margin-top: 2rem;
+}
+
+.card {
+    background: var(--surface);
+    padding: 2.5rem;
+    border-radius: var(--radius);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: var(--transition);
+}
+.card:hover { transform: translateY(-10px); }
+
+/* --- CARROSSEL --- */
+.carousel-container {
+    position: relative; overflow: hidden;
+    border-radius: var(--radius);
+    background: var(--primary); color: white;
+}
+.carousel-track {
+    display: flex; transition: transform 0.6s var(--transition);
+}
+.carousel-item {
+    min-width: 100%; padding: 4rem 2rem; text-align: center;
+}
+
+/* --- ACORDEÃO (EXPANDABLES) --- */
+.accordion-item { border-bottom: 1px solid rgba(0,0,0,0.1); }
+.accordion-trigger {
+    width: 100%; padding: 1.5rem; text-align: left;
+    background: none; border: none; font-weight: bold;
+    cursor: pointer; font-size: 1.1rem; color: inherit;
+}
+.accordion-content {
+    max-height: 0; overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    padding: 0 1.5rem;
+}
+
+/* --- ANIMAÇÕES (SCROLL REVEAL) --- */
+.reveal {
+    opacity: 0; transform: translateY(30px);
+    transition: 0.8s ease-out;
+}
+.reveal.active { opacity: 1; transform: translateY(0); }
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 768px) {
+    :root { font-size: 15px; }
+}
