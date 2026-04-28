@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoVoz | Consciência e Ação Ambiental</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+
+    <header role="banner" class="main-header">
+        <nav class="navbar container" aria-label="Menu de Acessibilidade">
+            <div class="logo" aria-hidden="true">🌿 Eco<span>Voz</span></div>
+            <div class="a11y-controls">
+                <button id="toggle-contrast" title="Modo de Alto Contraste" aria-label="Alternar alto contraste">🌓</button>
+                <button id="font-down" title="Diminuir texto" aria-label="Diminuir fonte">A-</button>
+                <button id="font-up" title="Aumentar texto" aria-label="Aumentar fonte">A+</button>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content" tabindex="-1">
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="container reveal">
+                <h1 id="hero-title">Nosso planeta pede <span>socorro</span>.</h1>
+                <p>Entenda os principais desafios ambientais da nossa era e como você pode fazer a diferença hoje.</p>
+                <a href="#problems-grid" class="btn-cta">Explorar Impactos</a>
+            </div>
+        </section>
+
+        <section id="problems-section" class="container section-padding" aria-labelledby="problems-title">
+            <h2 id="problems-title" class="reveal">Crises Urgentes</h2>
+            <div id="problems-grid" class="grid-layout">
+                </div>
+        </section>
+
+        <section class="carousel-section reveal" aria-labelledby="carousel-title">
+            <div class="container">
+                <h2 id="carousel-title">Caminhos para a Regeneração</h2>
+                <div class="carousel-container">
+                    <div class="carousel-track" id="carousel-track" role="region" aria-live="polite">
+                        </div>
+                    <div class="carousel-nav">
+                        <button id="prev-btn" aria-label="Slide anterior">❮</button>
+                        <button id="next-btn" aria-label="Próximo slide">❯</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-section container section-padding reveal" aria-labelledby="faq-title">
+            <h2 id="faq-title">Perguntas Frequentes</h2>
+            <div id="accordion-group" class="accordion">
+                </div>
+        </section>
+    </main>
+
+    <footer role="contentinfo" class="main-footer">
+        <div class="container">
+            <p>&copy; 2026 EcoVoz - Pela preservação do ecossistema global.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
